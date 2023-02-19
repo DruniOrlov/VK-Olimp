@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.druniadler.orlov_vk_olimp.data.api.model.Service
+import com.druniadler.orlov_vk_olimp.ui.HyperlinkText
 import com.druniadler.orlov_vk_olimp.ui.homescreen.ServiceParcelable
 
 @Composable
@@ -66,13 +67,13 @@ fun DetailsScreen(service: Service?) {
                 fontFamily = FontFamily.SansSerif,
                 modifier = Modifier.padding(8.dp)
             )
-            Text(
-                text = service.serviceUrl,
-                textAlign = TextAlign.Left,
+            HyperlinkText(
                 fontSize = 18.sp,
-                fontFamily = FontFamily.SansSerif,
                 modifier = Modifier.padding(10.dp),
-                style = TextStyle(color = Color(81,135,176))
+                linkText = listOf(service.serviceUrl),
+                fullText = service.serviceUrl,
+                hyperlinks = listOf(service.serviceUrl),
+
             )
         }
     }
